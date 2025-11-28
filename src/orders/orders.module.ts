@@ -4,13 +4,14 @@ import { OrdersService } from './orders.service';
 import { OrderRepository } from './orders.repository';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Order, OrderSchema } from './schemas/order.schema';
-import { CacheService } from 'src/cache/cache.service';
+import { CacheModule } from 'src/cache/cache.module';
 
 @Module({
   imports: [
     MongooseModule.forFeature([{ name: Order.name, schema: OrderSchema }]),
+    CacheModule,
   ],
   controllers: [OrdersController],
-  providers: [OrdersService, OrderRepository, CacheService],
+  providers: [OrdersService, OrderRepository],
 })
 export class OrdersModule {}
