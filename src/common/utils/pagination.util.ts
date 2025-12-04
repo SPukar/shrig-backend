@@ -24,7 +24,6 @@ export async function pagination(
   transformFn: (data: any) => any,
   sort: any = { createdAt: -1 },
 ): Promise<PaginationResult> {
-  console.log(filter, options, transformFn, sort);
   const { page = 1, limit = 50 } = options;
   const skip = (page - 1) * limit;
 

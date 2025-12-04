@@ -9,6 +9,10 @@
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
+    "seed": "ts-node -r tsconfig-paths/register src/seed/seed.ts",
+    "seed:clear": "ts-node -r tsconfig-paths/register src/seed/seed.ts clear",
+    "seed:orders": "ts-node -r tsconfig-paths/register src/seed/seed.ts orders",
+    "seed:datapoints": "ts-node -r tsconfig-paths/register src/seed/seed.ts datapoints",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
@@ -20,6 +24,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@faker-js/faker": "^10.1.0",
     "@nestjs/bull": "^11.0.4",
     "@nestjs/common": "^11.0.1",
     "@nestjs/core": "^11.0.1",
